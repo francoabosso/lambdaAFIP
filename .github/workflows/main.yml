@@ -21,4 +21,4 @@ jobs:
       - name: deploy
         run: |
           zip -r deploy.zip ./*
-          aws lambda update-function-code --function-name=zohoBooksInvoice --zip-file=fileb://deploy.zip
+          aws lambda update-function-code --function-name=AFIP_API --zip-file=fileb://deploy.zip
