@@ -16,10 +16,19 @@ exports.handler = async (event, _context, callback) => {
     const dataSQS = await sqs.sendMessage(params).promise();
     callback(
       null,
-      createResponse(200, { result, MessageId: dataSQS.MessageId })
+      createResponse(200, {
+        code: 0,
+        message: 'Mensaje puesto en cola exitosamente.',
+      })
     );
   } catch (err) {
     console.log('Err', err);
-    callback(createResponse(500, body), null);
+    callback(
+      createResponse(500, {
+        code: 500,
+        message: 'Error al crear el voucher',
+      }),
+      null
+    );
   }
 };
