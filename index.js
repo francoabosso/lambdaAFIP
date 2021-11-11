@@ -1,5 +1,5 @@
 const { SQS } = require('aws-sdk');
-const { createVoucher } = require('./interactors/createVoucher/createVoucher');
+const { createVoucher } = require('./services/afip/createVoucher/createVoucher');
 const { createResponse } = require('./utils/createResponse');
 
 const sqs = new SQS({ apiVersion: '2012-11-05' });
@@ -13,7 +13,7 @@ exports.handler = async (event, _context, callback) => {
       MessageBody: JSON.stringify(result),
       QueueUrl: QUEUE_URL,
     };
-    const dataSQS = await sqs.sendMessage(params).promise();
+    await sqs.sendMessage(params).promise();
     callback(
       null,
       createResponse(200, {

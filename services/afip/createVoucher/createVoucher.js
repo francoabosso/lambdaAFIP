@@ -1,13 +1,14 @@
 const Afip = require('@afipsdk/afip.js');
-const { preprocessAFIPData } = require('../../utils/preprocessAFIPData');
-const { generatePayloadZB } = require('../../utils/generatePayloadZB');
+const { preprocessAFIPData } = require('../../../utils/preprocessAFIPData');
+const { generatePayloadZB } = require('../../../utils/generatePayloadZB');
+const { EFS_PATH } = require('../../../config/config');
 
 const createVoucher = async (input) => {
   // ToDo: check here about status field coming from ZB
 
   const afip = new Afip({
     CUIT: Number(process.env.CUIT),
-    ta_folder: '/mnt/access',
+    ta_folder: EFS_PATH,
   });
 
   const AFIPData = preprocessAFIPData(input);
