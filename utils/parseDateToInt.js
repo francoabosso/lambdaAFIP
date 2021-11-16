@@ -1,5 +1,5 @@
 const parseDateToInt = (date) => {
-  return date && parseInt(date.replace(/-/g, ''));
+  return date && parseInt(date.replace(/-/g, ""));
 };
 
 module.exports = {

@@ -1,4 +1,4 @@
-const { aliquots } = require('./dictionaries/aliquots');
+const { aliquots } = require("./dictionaries/aliquots");
 const createIvaList = (list) => {
   return list.reduce((ivaList, item) => {
     const Id = aliquots[item.tax_percentage.toString()];

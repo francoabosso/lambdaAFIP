@@ -1,7 +1,7 @@
-const Afip = require('@afipsdk/afip.js');
-const { preprocessAFIPData } = require('../../../utils/preprocessAFIPData');
-const { generatePayloadZB } = require('../../../utils/generatePayloadZB');
-const { EFS_PATH } = require('../../../config/config');
+const Afip = require("@afipsdk/afip.js");
+const { preprocessAFIPData } = require("../../../utils/preprocessAFIPData");
+const { generatePayloadZB } = require("../../../utils/generatePayloadZB");
+const { EFS_PATH } = require("../../../config/config");
 
 const createVoucher = async (input) => {
   // ToDo: check here about status field coming from ZB
@@ -15,7 +15,7 @@ const createVoucher = async (input) => {
 
   const AFIPResponse = await afip.ElectronicBilling.createNextVoucher(AFIPData);
 
-  console.log('Finished with createNextVoucher');
+  console.log("Finished with createNextVoucher");
 
   const { invoice_id } = input;
   const payload = generatePayloadZB(process.env.CUIT, {

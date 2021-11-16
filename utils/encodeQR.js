@@ -1,4 +1,4 @@
-const { getToday } = require('./getToday');
+const { getToday } = require("./getToday");
 
 const encodeQR = (CUIT, data, AfipResponse) => {
   // Example of QRData = {
@@ -29,11 +29,11 @@ const encodeQR = (CUIT, data, AfipResponse) => {
     ctz: data.MonCotiz,
     tipoDocRec: 80,
     nroDocRec: data.DocNro,
-    tipoCodAut: 'E',
+    tipoCodAut: "E",
     codAut: AfipResponse.CAE,
   };
 
-  return Buffer.from(JSON.stringify(QRData)).toString('base64');
+  return Buffer.from(JSON.stringify(QRData)).toString("base64");
 };
 
 module.exports = {

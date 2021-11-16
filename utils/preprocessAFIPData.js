@@ -1,6 +1,6 @@
-const { createIvaList } = require('./createIvaList');
-const { getToday } = require('./getToday');
-const { parseDateToInt } = require('./parseDateToInt');
+const { createIvaList } = require("./createIvaList");
+const { getToday } = require("./getToday");
+const { parseDateToInt } = require("./parseDateToInt");
 
 const preprocessAFIPData = (data) => {
   const { fields, line_items, FchServDesde, FchServHasta, FchVtoPago } = data;

@@ -1,4 +1,4 @@
-const { invoiceTypeIds } = require('./dictionaries/invoiceTypeIds');
+const { invoiceTypeIds } = require("./dictionaries/invoiceTypeIds");
 
 const renameInvoiceTypeIds = (id) => {
   return invoiceTypeIds[id];
