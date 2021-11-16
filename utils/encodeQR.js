@@ -33,6 +33,8 @@ const encodeQR = (CUIT, data, AfipResponse) => {
     codAut: AfipResponse.CAE,
   };
 
+  console.log(QRData);
+
   return Buffer.from(JSON.stringify(QRData)).toString("base64");
 };
 
