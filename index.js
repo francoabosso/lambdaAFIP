@@ -7,8 +7,9 @@ const sqs = new SQS({ apiVersion: "2012-11-05" });
 const { QUEUE_URL } = require("./config/config");
 
 exports.handler = async (event, _context, callback) => {
+  const { body } = event.Records[0];
   try {
-    const result = await createVoucher(event);
+    const result = await createVoucher(JSON.parse(body));
     const params = {
       MessageBody: JSON.stringify(result),
       QueueUrl: QUEUE_URL,
