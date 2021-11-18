@@ -3,13 +3,11 @@ const {
   createVoucher,
 } = require("./services/afip/createVoucher/createVoucher");
 const { createResponse } = require("./utils/createResponse");
-const { invokeLambda } = require("./utils/invokeLambda");
 const sqs = new SQS({ apiVersion: "2012-11-05" });
 const { QUEUE_URL } = require("./config/config");
 
 exports.handler = async (event, _context, callback) => {
   try {
-    await invokeLambda("cheapseats-vpc-RequestNATGateway");
     const result = await createVoucher(event);
     const params = {
       MessageBody: JSON.stringify(result),
