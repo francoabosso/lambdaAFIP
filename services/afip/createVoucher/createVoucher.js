@@ -9,9 +9,9 @@ const createVoucher = async (input) => {
   const afip = new Afip({
     CUIT: Number(process.env.CUIT),
     ta_folder: EFS_PATH,
-    production: true,
-    cert: 'cert_prod',
-    key: 'key_prod',
+    // production: true,
+    // cert: 'cert_prod',
+    // key: 'key_prod',
   });
 
   const AFIPData = preprocessAFIPData(input);
