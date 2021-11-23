@@ -7,6 +7,7 @@ const preprocessAFIPData = (data) => {
   const { ImpTotal, ImpNeto, ImpIVA } = fields;
   return {
     ...fields,
+    PtoVta: 4,
     ImpTotal: ImpTotal.toFixed(2),
     ImpNeto: ImpNeto.toFixed(2),
     ImpIVA: ImpIVA.toFixed(2),
